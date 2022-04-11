@@ -6,11 +6,14 @@ import Home from "./pages/home/Home";
 import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import NotFound from "./pages/notfound/NotFound";
+import Navbar from "./components/Navbar";
 
 function App() {
 
   return (
     <div className="App">
+      <Navbar />
+
       <Routes>
         <Route exact path="/" element={ <Home /> } />
         <Route path="/login" element={ <Login /> } />
