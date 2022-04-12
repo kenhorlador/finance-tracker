@@ -12,6 +12,8 @@ function Login() {
     e.preventDefault()
 
     console.log(email, password)
+    setEmail('')
+    setPassword('')
   }
 
   return (
