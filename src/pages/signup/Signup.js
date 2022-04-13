@@ -1,3 +1,5 @@
+import useSignup from '../../hooks/useSignup'
+
 import { useState, useRef } from 'react'
 import styles from './Signup.module.css'
 
@@ -6,17 +8,19 @@ function Signup() {
   const [password, setPassword] = useState('')
   const [displayName, setDisplayName] = useState('')
   const focusRef = useRef()
+  const { error, signup, isPending } = useSignup()
 
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    console.log(displayName, email, password)
+    signup(email, password, password)
 
     // Reset values
     setDisplayName('')
     setEmail('')
     setPassword('')
 
+    // set focus state
     focusRef.current.focus()
   }
 
@@ -49,7 +53,6 @@ function Signup() {
          />
       </label>
 
-
       {/* Password */}
       <label>
         <span>Password:</span>
@@ -60,7 +63,8 @@ function Signup() {
         />
       </label>
 
-      <button className='btn'>Sign Up</button>
+      { !isPending ? <button className='btn'>Sign Up</button> : <button className='btn' disabled>Loading...</button> }
+      { error && <p>{ error }</p>}
 
     </form>
   )
