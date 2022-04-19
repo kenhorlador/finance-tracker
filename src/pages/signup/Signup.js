@@ -1,6 +1,10 @@
+// Packages
+import { useState, useRef } from 'react'
+
+// Hooks
 import useSignup from '../../hooks/useSignup'
 
-import { useState, useRef } from 'react'
+// Styles
 import styles from './Signup.module.css'
 
 function Signup() {
@@ -13,7 +17,7 @@ function Signup() {
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    signup(email, password, password)
+    signup(email, password, displayName)
 
     // Reset values
     setDisplayName('')
