@@ -1,14 +1,22 @@
+// Packages
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import { BrowserRouter } from 'react-router-dom'
 
+// Components
+import App from './App';
+import { AuthContextProvider } from './context/AuthContext.js'
+
+// Styles
+import './index.css';
+
 ReactDOM.render(
-  <BrowserRouter>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </BrowserRouter>,
+  <React.StrictMode>
+    <AuthContextProvider>
+      <BrowserRouter>
+          <App />
+      </BrowserRouter>
+    </AuthContextProvider>
+  </React.StrictMode>,
   document.getElementById('root')
 );
