@@ -44,6 +44,7 @@ function Signup() {
           onChange={ e => setDisplayName(e.target.value) }
           value={ displayName }
           ref={ focusRef }
+          required
          />
       </label>
 
@@ -54,6 +55,7 @@ function Signup() {
           type="email"
           onChange={ e => setEmail(e.target.value) }
           value={ email }
+          required
          />
       </label>
 
@@ -64,6 +66,7 @@ function Signup() {
           type="password"
           onChange={ e => setPassword(e.target.value) }
           value={ password }
+          required
         />
       </label>
 
