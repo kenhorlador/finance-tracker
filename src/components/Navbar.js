@@ -10,7 +10,7 @@ function Navbar() {
 
   return (
     <nav className={ styles.navbar }>
-      <ul></ul>
+      <ul>
         <li className={ styles.title }><Link to="/">FinanceTracker</Link></li>
 
         {!user && (
