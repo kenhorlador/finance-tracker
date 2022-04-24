@@ -10,22 +10,26 @@ import NotFound from "./pages/notfound/NotFound";
 // components
 import Navbar from "./components/Navbar";
 
+// hooks
+import { useAuthContext } from './hooks/useAuthContext'
+
 function App() {
+  const { authIsReady } = useAuthContext()
 
   return (
     <div className="App">
-      <Navbar />
+      {authIsReady && (
+        <>
+          <Navbar />
 
-      <Routes>
-        <Route exact path="/" element={ <Home /> } />
-        <Route path="/login" element={ <Login /> } />
-        <Route path="/signup" element={ <Signup /> } />
-        <Route path="*" element={ <NotFound /> } />
-      </Routes>
-
-
-
-
+          <Routes>
+            <Route path="/" element={ <Home /> } />
+            <Route path="/login" element={ <Login /> } />
+            <Route path="/signup" element={ <Signup /> } />
+            <Route path="*" element={ <NotFound /> } />
+          </Routes>
+        </>
+      )}
     </div>
   );
 }
