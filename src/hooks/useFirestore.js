@@ -40,18 +40,19 @@ const useFirestore = (collection) => {
   }
 
   const addDoc = async (doc) => {
+    dispatch({ type: 'IS_PENDING' })
     try {
       const addedDoc = await ref.add(doc)
       dispatchNC({ type: 'ADD_DOC', payload: addedDoc })
     }
 
     catch (err) {
-      dispatchNC({ type: 'ERROR' })
+      dispatchNC({ type: 'ERROR', payload: err.message })
     }
   }
 
 
-  const deleteDoc = (id) => {
+  const deleteDoc = async (id) => {
 
   }
 
