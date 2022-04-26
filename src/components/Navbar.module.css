@@ -18,8 +18,8 @@
   font-size: 1.2em;
 }
 
-.navbar button, .navbar a {
-  margin-left: 16px;
+.navbar p {
+  margin-right: 24px;
 }
 
 .navbar a {
