@@ -1,5 +1,5 @@
 // Packages
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 // Hooks
 import { useFirestore } from '../../hooks/useFirestore'
@@ -12,10 +12,14 @@ export default function TransactionForm({ uid }) {
   const handleSubmit = (e) => {
     e.preventDefault()
     addDoc({ uid, name, amount})
-
-    setAmount('')
-    setName('')
   }
+
+  useEffect(() => {
+    if (response.success) {
+      setName('')
+      setAmount('')
+    }
+  }, [response.success])
 
   return (
     <>
