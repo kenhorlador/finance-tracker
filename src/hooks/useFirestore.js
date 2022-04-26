@@ -65,4 +65,4 @@ const useFirestore = (collection) => {
   return { addDoc, deleteDoc, response }
 }
 
-export default useFirestore
+export { useFirestore }
