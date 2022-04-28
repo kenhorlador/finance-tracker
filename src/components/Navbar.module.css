@@ -18,11 +18,15 @@
   font-size: 1.2em;
 }
 
+.navbar a {
+  color: #333;
+  text-decoration: none;
+}
+
 .navbar p {
   margin-right: 24px;
 }
 
-.navbar a {
-  color: #333;
-  text-decoration: none;
+.navbar li:not(:first-child) {
+  margin-left: 16px;
 }
